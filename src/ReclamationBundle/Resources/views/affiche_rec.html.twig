@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+
+{% block content %}
+
+    <div class="all-title-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Reclamation</h2>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">ABOUT US</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <center>
+<h1>Liste des Réclamations</h1>
+<br><br>
+
+{% for res in res %}
+<ul>
+
+    <table border="2">
+        <tr>
+            <td>
+                Objet : {{ res.Objet }}<br>
+                Text : {{ res.text }}<br>
+                Type : {{ res.type }}<br>
+                Etat :{{ res.etat }}<br>
+                Date : {{ res.date|date() }}<br>
+            <br>
+                <br>
+            <td>
+                <a href="{{url('DeleteRec',{'id': res.id })}}"> <button> Delete </button></a> <br>
+            </td>
+        </tr>
+    </table>
+</ul>
+{% endfor %}
+
+</center>
+{% endblock %}

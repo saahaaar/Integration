@@ -1,0 +1,13 @@
+reclamation_homepage:
+    path:     /
+    defaults: { _controller: ReclamationBundle:Default:index }
+
+Ajouter_rec:
+    path:     /AjouterRec
+    defaults: { _controller: ReclamationBundle:Reclamation:AjouterRec }
+Afficher_rec:
+    path:     /AfficherRec
+    defaults: { _controller: ReclamationBundle:Reclamation:readRec }
+DeleteRec:
+    path:     /DeleteRec/{id}
+    defaults: { _controller: ReclamationBundle:Reclamation:DeleteRec }
