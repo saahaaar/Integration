@@ -1,0 +1,19 @@
+PubextBundle\Entity\Pubint:
+    type: entity
+    table: null
+    repositoryClass: PubextBundle\Repository\PubintRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nom:
+            type: string
+            length: 255
+        datedebutpubint:
+            type: date
+        dateexppubint:
+            type: date
+    lifecycleCallbacks: {  }

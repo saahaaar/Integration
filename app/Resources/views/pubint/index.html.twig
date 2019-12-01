@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Pubints list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Datedebutpubint</th>
+                <th>Dateexppubint</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for pubint in pubints %}
+            <tr>
+                <td><a href="{{ path('pubint_show', { 'id': pubint.id }) }}">{{ pubint.id }}</a></td>
+                <td>{{ pubint.nom }}</td>
+                <td>{% if pubint.datedebutpubint %}{{ pubint.datedebutpubint|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if pubint.dateexppubint %}{{ pubint.dateexppubint|date('Y-m-d') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('pubint_show', { 'id': pubint.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('pubint_edit', { 'id': pubint.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('pubint_new') }}">Create a new pubint</a>
+        </li>
+    </ul>
+{% endblock %}

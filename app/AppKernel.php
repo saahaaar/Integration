@@ -24,6 +24,7 @@ class AppKernel extends Kernel
             new CommandeBundle\CommandeBundle(),
             new FavorisBundle\FavorisBundle(),
             new UserBundle\UserBundle(),
+            new PubextBundle\PubextBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

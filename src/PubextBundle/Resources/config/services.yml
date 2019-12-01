@@ -1,0 +1,4 @@
+services:
+#    pubext.example:
+#        class: PubextBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

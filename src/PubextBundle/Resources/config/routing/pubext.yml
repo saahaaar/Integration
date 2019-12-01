@@ -1,0 +1,24 @@
+pubext_index:
+    path:     /
+    defaults: { _controller: "PubextBundle:Pubext:index" }
+    methods:  GET
+
+pubext_show:
+    path:     /{id}/show
+    defaults: { _controller: "PubextBundle:Pubext:show" }
+    methods:  GET
+
+pubext_new:
+    path:     /new
+    defaults: { _controller: "PubextBundle:Pubext:new" }
+    methods:  [GET, POST]
+
+pubext_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "PubextBundle:Pubext:edit" }
+    methods:  [GET, POST]
+
+pubext_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "PubextBundle:Pubext:delete" }
+    methods:  DELETE
