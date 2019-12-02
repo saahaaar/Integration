@@ -1,0 +1,62 @@
+{% extends "@Club/template/test.html.twig" %}
+{% block  title%}
+{#write acomments here#}
+{#filter lin of twig filter https://twig.symfony.com/doc/2.x/filters/index.html#}
+{#capatlize#}
+{{ 'my First car'|capitalize }}<br>
+{% set var = "4infoB4" %}
+the content of my variable is  :{{ var }}<br>
+{#declare may variable in same time#}
+{% set var1,var2= "var1","var2" %}
+the content of my first varible is :{{ var1 }}<br>
+the content of my second varible is :{{ var2 }}<br>
+
+
+{#show the content of table sent from controller#}
+{% for item in tab %}
+    <li>
+        first name: {{ item.firstName }}<br>
+    </li>
+    <li>
+        last name: {{ item.lastName }}<br>
+
+    <li>
+
+        class:  {{ item.class }}
+        {% if item.class=='infoB' %}
+            <button>Edit</button>
+        {% endif %}
+    </li>
+{% endfor %}
+{{app.environment}}<br>
+{{app.debug}}<br>
+
+{{app.request}}<br>
+{{ app.request.server.get("SERVER_NAME") }}
+<br>
+{{app.request.method}}<br>
+
+{{app.request.cookies.get("nom_parametre")}}
+
+
+{#filter#}
+{{ "hello world ."|trim('.'|upper)}}=>HELLO WORLD <br>
+{{"HELLO"|lower}}
+
+{#date filtre#}
+
+{{date("2009-10-14T19:00:00")|date("m/d/Y")}}<br>
+{#add one day to date#}
+{{date("2009-10-14T19:00:00")|date_modify("+70 day")|date("m/d/Y")}}<br>
+{#max of the tab#}
+{% set tab = [1, 5, 2, 3] %}
+    {{ max(tab) }}
+{#
+{% include "@Club/template/test.html.twig" %}#}
+{#
+{{ render(controller('AppBundle:Default:index')) }}
+#}
+
+
+
+{% endblock %}

@@ -1,0 +1,43 @@
+﻿<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        .bordure {
+            border: 4px solid red;
+        }
+    </style>
+    <script>
+ $(function () {
+
+            $("img").attr("src", "http://static.jquery.com/files/rocker/images/logo_jquery_215x53.gif");
+
+            $("img").mouseenter(function () {
+                if (!$(this).hasClass("bordure")) {
+                    $(this).addClass("bordure");
+                }
+
+            });
+
+            $("img").mouseleave(function () {
+                if ($(this).hasClass("bordure")) {
+                    $(this).removeClass("bordure");
+                }
+            });
+
+            $("#bouton").click(function () {
+                alert('je vais cacher la photo');
+                $("img").hide();
+            });
+
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <img style="background-color:black"/>
+    <br/>
+    <br/>
+    <button id="bouton">Cache-Cache</button>
+
+</body>

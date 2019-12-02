@@ -1,0 +1,87 @@
+• Méthodes lourdes de développement logiciel:
+-RUP
+-2TUP
+**********************************************
+• Processus unifié :
+est une famille de méthodes de développement de logiciels orientés objets. 
+Elle se caractérise par une démarche itérative et incrémentale, pilotée par les cas d'utilisation, et centrée sur l'architecture et les modèles UML. 
+Elle définit un processus intégrant toutes les activités de conception et de réalisation au sein de cycles de développement composés d'une phases de création, 
+d'une phase d'élaboration, d'une phase de construction et d'une phase de transition, comprenant chacune plusieurs itérations.
+
+-UP est une méthode générique de développement de logiciels. 
+Cette méthode nécessite donc d'être adaptée à chacun des projets pour lesquels elle sera employée.
+Caractéristiques de UP :
+-UP est piloté par les cas d’utilisation : Système analysé, conçu et développé pour des utilisateurs. 
+					   Tout doit donc être fait en adoptant le point de vue utilisateur.
+-UP est centré sur l’architecture : L'architecture du système est décrite à l'aide de différentes vues.
+				    L'architecte procède de manière incrémentale : 
+				    il commence par définir une architecture simplifiée qui répond aux besoins classés comme prioritaires 
+				    Puis définit à partir de l’architecture simplifiée les sous-systèmes de manière beaucoup plus précise.
+-UP est itératif et incrémental : En procédant de manière itérative, il est possible de découvrir les erreurs et les incompréhensions plus tôt. 
+				  Le feedback de l'utilisateur est aussi encouragé et les tests effectués à chaque utilisation permettent d'avoir 
+				  une vision plus objective de l'avancement du projet.
+				  Le travail itératif permet à l'équipe de capitaliser à chaque cycle les enseignements du cycle précédent.
+-UP est orienté risques : Identifier les risques. 
+			  Maintenir une liste de risques tout au long du projet.
+**********************************************
+•	Processus 2TUP (Two Tracks Unified Process) : est un processus de développement logiciel qui met en œuvre la méthode du processus Unifié.
+
+Le 2TUP propose un cycle de développement en Y, qui dissocie les aspects techniques des aspects fonctionnels. 
+Il commence par une étude préliminaire qui consiste essentiellement à identifier les acteurs qui vont interagir avec le système à construire, 
+les messages qu'échangent les acteurs et le système, à produire le cahier des charges et à modéliser le contexte (le système est une boîte noire, 
+les acteurs l'entourent et sont reliés à lui, sur l'axe qui lie un acteur au système on met les messages que les deux s'échangent avec le sens).
+
+Le processus s'articule ensuite autour de trois phases essentielles :
+
+une branche technique ;
+une branche fonctionnelle ;
+une phase de réalisation.
+
+-- La branche fonctionnelle capitalise la connaissance du métier de l’entreprise. 
+Cette branche capture des besoins fonctionnels, ce qui produit un modèle focalisé sur le métier des utilisateurs finaux.
+
+-- La branche technique capitalise un savoir-faire technique et/ou des contraintes techniques. 
+Les techniques développées pour le système le sont indépendamment des fonctions à réaliser.
+
+-- La phase de réalisation consiste à réunir les deux branches, 
+permettant de mener une conception applicative et enfin la livraison d'une solution adaptée aux besoins.
+
+**********************************************
+
+
+- La méthode RUP (Rational Unified Process), quant à elle, est une des émanations de la méthode PU, qui s’attache à donner un cadre précis au développement du logiciel.
+C’est une méthode générique, itérative et incrémentale assez lourde mais qui s’adapte très facilement aux processus et aux besoins du développement.
+- Cette méthode permet de répondre aux besoins des utilisateurs rapidement, dans les délais impartis, tout en respectant les budgets.
+En effet, elle canalise et modélise toutes les étapes du développement d’un logiciel. Elle en ordonne aussi très clairement les différents jalons.
+
+- Composantes du RUP : 4 phases :
+* Etude d’opportunité.
+* Elaboration.
+* Construction.
+* Transition.
+
+- 5 activités:
+* Expression des besoins.
+* Analyse.
+* Conception.
+* Implémentation.
+* Test.
+
+-Ensemble d’itérations : circuit de développement aboutissant à un délivrable.
+
+
+Two Tracks Unified Process répond aux contraintes de changement continuel imposées aux systèmes d’information de l’entreprise.
+Ce processus suit troix grandes passerelles:
+chemin fonctionnel
+• Capture des besoins fonctionnels: focalisation sur le métier des utilisateurs.
+• L’analyse : obtenir une idée de ce que va réaliser le système en terme de métier.
+
+chemin technique
+• La capture des besoins techniques: recenser toutes les contraintes sur les choix de dimensionnant et la conception du système.
+• La conception générique : définir les composants nécessaires à la construction de l’architecture technique. construire le squelette du système"un prototype".
+
+chemin de conception
+• La conception préliminaire : intègrer le modèle d’analyse fonctionnelle dans l’architecture technique de manière à tracer la cartographie des composants du système à développer.
+• La conception détaillée, qui étudie ensuite comment réaliser chaque composant.
+• L’étape de codage : produire les composants et tester au fur et à mesure les unités de code réalisées.
+• L’étape de recette : valider les fonctionnalités du système développer

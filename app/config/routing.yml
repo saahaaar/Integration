@@ -1,3 +1,11 @@
+promotion:
+    resource: "@promotionBundle/Resources/config/routing.yml"
+    prefix:   /pro
+
+admintmp:
+    resource: "@admintmpBundle/Resources/config/routing.yml"
+    prefix:   /nou
+
 user:
     resource: "@UserBundle/Resources/config/routing.yml"
     prefix:   /
