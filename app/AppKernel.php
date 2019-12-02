@@ -24,6 +24,7 @@ class AppKernel extends Kernel
             new CommandeBundle\CommandeBundle(),
             new FavorisBundle\FavorisBundle(),
             new UserBundle\UserBundle(),
+            new PubextBundle\PubextBundle(),
             new admintmpBundle\admintmpBundle(),
             new promotionBundle\promotionBundle(),
         ];

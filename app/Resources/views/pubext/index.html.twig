@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Pubexts list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nompubext</th>
+                <th>Datedebutpubext</th>
+                <th>Dateexppubext</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for pubext in pubexts %}
+            <tr>
+                <td><a href="{{ path('pubext_show', { 'id': pubext.id }) }}">{{ pubext.id }}</a></td>
+                <td>{{ pubext.nompubext }}</td>
+                <td>{{ pubext.datedebutpubext }}</td>
+                <td>{{ pubext.dateexppubext }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('pubext_show', { 'id': pubext.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('pubext_edit', { 'id': pubext.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('pubext_new') }}">Create a new pubext</a>
+        </li>
+    </ul>
+{% endblock %}

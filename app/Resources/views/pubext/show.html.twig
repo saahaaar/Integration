@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Pubext</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ pubext.id }}</td>
+            </tr>
+            <tr>
+                <th>Nompubext</th>
+                <td>{{ pubext.nompubext }}</td>
+            </tr>
+            <tr>
+                <th>Datedebutpubext</th>
+                <td>{{ pubext.datedebutpubext }}</td>
+            </tr>
+            <tr>
+                <th>Dateexppubext</th>
+                <td>{{ pubext.dateexppubext }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('pubext_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('pubext_edit', { 'id': pubext.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

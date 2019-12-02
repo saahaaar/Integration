@@ -1,3 +1,7 @@
+pubext:
+    resource: "@PubextBundle/Resources/config/routing.yml"
+    prefix:   /
+
 promotion:
     resource: "@promotionBundle/Resources/config/routing.yml"
     prefix:   /pro

@@ -1,0 +1,7 @@
+pubext_pubext:
+    resource: "@PubextBundle/Resources/config/routing/pubext.yml"
+    prefix:   /pubext
+
+pubext_homepage:
+    path:     /
+    defaults: { _controller: PubextBundle:Default:index }

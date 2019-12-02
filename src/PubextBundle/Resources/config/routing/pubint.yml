@@ -1,0 +1,24 @@
+pubint_index:
+    path:     /
+    defaults: { _controller: "PubextBundle:Pubint:index" }
+    methods:  GET
+
+pubint_show:
+    path:     /{id}/show
+    defaults: { _controller: "PubextBundle:Pubint:show" }
+    methods:  GET
+
+pubint_new:
+    path:     /new
+    defaults: { _controller: "PubextBundle:Pubint:new" }
+    methods:  [GET, POST]
+
+pubint_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "PubextBundle:Pubint:edit" }
+    methods:  [GET, POST]
+
+pubint_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "PubextBundle:Pubint:delete" }
+    methods:  DELETE

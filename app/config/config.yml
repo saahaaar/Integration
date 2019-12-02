@@ -8,6 +8,7 @@ imports:
     - { resource: "@CommandeBundle/Resources/config/services.yml" }
     - { resource: "@FavorisBundle/Resources/config/services.yml" }
     - { resource: "@UserBundle/Resources/config/services.yml" }
+    - { resource: "@PubextBundle/Resources/config/services.yml" }
     - { resource: "@admintmpBundle/Resources/config/services.yml" }
     - { resource: "@promotionBundle/Resources/config/services.yml" }
 
