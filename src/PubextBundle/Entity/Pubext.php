@@ -65,7 +65,7 @@ class Pubext
     /**
      * Set datedebutpubext
      *
-     * @param string $datedebutpubext
+     * @param \DateTime $datedebutpubext
      *
      * @return Pubext
      */
@@ -79,7 +79,7 @@ class Pubext
     /**
      * Get datedebutpubext
      *
-     * @return string
+     * @return \DateTime
      */
     public function getDatedebutpubext()
     {
@@ -89,7 +89,7 @@ class Pubext
     /**
      * Set dateexppubext
      *
-     * @param string $dateexppubext
+     * @param \DateTime $dateexppubext
      *
      * @return Pubext
      */
@@ -103,7 +103,7 @@ class Pubext
     /**
      * Get dateexppubext
      *
-     * @return string
+     * @return \DateTime
      */
     public function getDateexppubext()
     {

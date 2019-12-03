@@ -1,16 +1,44 @@
-{% extends 'base.html.twig' %}
+{% extends '@admintmp/Default/index.html.twig' %}
 
 {% block body %}
-    <h1>Pubint creation</h1>
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('pubint_index') }}">Back to the list</a>
-        </li>
-    </ul>
+<form role="form" action="{{ path('pubint_new') }}" method="post">
+    <h2 class="form-title">Ajout des Publicites internes</h2>
+    <div class="card-body">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Nom Pub</label>
+            <div>
+                {{ form_widget(form.nom, { 'attr': {'class': 'form-control', 'placeholder': 'Nom Pub','type':'text','name':'name','id':'nom_pubint' } }) }}                    </div>
+
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Date deb</label>
+            <div>
+                {{ form_widget(form.datedebutpubint, { 'attr': {'class': 'form-control', 'placeholder': 'Datedeb','type':'text','name':'name','id':'datedeb' } }) }}                    </div>
+
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Date fin</label>
+            <div>
+                {{ form_widget(form.dateexppubint, { 'attr': {'class': 'form-control', 'placeholder': 'dateexp','type':'text','name':'name','id':'dateexp' } }) }}                    </div>
+
+        </div>
+
+
+    </div>
+    <!-- /.card-body -->
+    {{ form_rest(form) }}
+    <div class="card-footer">
+        <ul>
+            <button type="submit" class="btn btn-primary">Create</button>
+        </ul>
+        <ul>
+            <li><h4>
+                    <a href="{{ path('pubint_index') }}" class="-address-book">Back to the list</a>
+                </h4>
+            </li>
+        </ul>
+    </div>
+</form>
 {% endblock %}

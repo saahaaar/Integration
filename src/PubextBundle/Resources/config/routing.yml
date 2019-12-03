@@ -1,7 +1,21 @@
-pubext_pubext:
-    resource: "@PubextBundle/Resources/config/routing/pubext.yml"
-    prefix:   /pubext
+Pubext_Pubext:
+  resource: "@PubextBundle/Resources/config/routing/pubext.yml"
+  prefix:   /Pubext
 
 pubext_homepage:
-    path:     /
+    path:     /pubext
     defaults: { _controller: PubextBundle:Default:index }
+
+Pubext_Pubint:
+  resource: "@PubextBundle/Resources/config/routing/pubint.yml"
+  prefix:   /Pubint
+
+pubint_homepage:
+  path:     /pubint
+  defaults: { _controller: PubintBundle:Default:index }
+
+
+
+
+
+

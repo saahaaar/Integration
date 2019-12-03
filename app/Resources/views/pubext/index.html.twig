@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends '@admintmp/Default/index.html.twig' %}
 
 {% block body %}
     <h1>Pubexts list</h1>
@@ -24,6 +24,7 @@
                     <ul>
                         <li>
                             <a href="{{ path('pubext_show', { 'id': pubext.id }) }}">show</a>
+
                         </li>
                         <li>
                             <a href="{{ path('pubext_edit', { 'id': pubext.id }) }}">edit</a>
