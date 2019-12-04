@@ -5,6 +5,7 @@ namespace PubextBundle\Controller;
 use PubextBundle\Entity\Pubext;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * Pubext controller.
@@ -27,6 +28,8 @@ class PubextController extends Controller
         ));
     }
 
+
+
     /**
      * Creates a new pubext entity.
      *
@@ -38,11 +41,17 @@ class PubextController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+
+            $file=$request->files->get('pubextbundle_pubext')['pubext'];
+            $uploads_directory=$this->getParameter('uploads_directory');
+
+            $fileName = $file->getClientOriginalName();
+            $file->move($uploads_directory,$fileName);
+            $pubext->setPhoto($fileName);
             $em = $this->getDoctrine()->getManager();
-            $pubext->setPhoto(file_get_contents($pubext->getPhoto()->getPathname()));
             $em->persist($pubext);
             $em->flush();
-
             return $this->redirectToRoute('pubext_show', array('id' => $pubext->getId()));
         }
 

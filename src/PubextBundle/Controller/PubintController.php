@@ -38,12 +38,15 @@ class PubintController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $file=$request->files->get('pubextbundle_pubint')['pubint'];
+            $uploads_directory=$this->getParameter('uploads_directory');
+
+            $fileName = $file->getClientOriginalName();
+            $file->move($uploads_directory,$fileName);
+            $pubint->setPhotoproduit($fileName);
             $em = $this->getDoctrine()->getManager();
-            $images =$em->getRepository('PubextBundle:Pubint')->findAll();
-            foreach ($images as $key=>$value){
-                $value->setPhoto(base64_encode(stream_get_contents($value->getPhoto())));
-            }
-            $em->persist($value);
+
+            $em->persist($pubint);
             $em->flush();
 
             return $this->redirectToRoute('pubint_show', array('id' => $pubint->getId()));

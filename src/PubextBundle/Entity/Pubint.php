@@ -36,6 +36,20 @@ class Pubint
     private $datedebutpubint;
 
     /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dateexppubint", type="date", nullable=false)
+     */
+    private $dateexppubint;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="photo", type="string", length=255, nullable=false)
+     */
+    private $photo;
+
+    /**
      * @return int
      */
     public function getId()
@@ -113,29 +127,6 @@ class Pubint
     public function setPhoto($photo)
     {
         $this->photo = $photo;
-    }
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="dateexppubint", type="date", nullable=false)
-     */
-    private $dateexppubint;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="photo", type="blob", length=65535, nullable=false)
-     */
-    private $photo;
-    private $rawPhoto;
-    public function displayPhoto()
-    {
-        if(null === $this->rawPhoto) {
-            $this->rawPhoto = "data:image/png;base65," . base64_encode(stream_get_contents($this->getPhoto()));
-        }
-
-        return $this->rawPhoto;
     }
 
 

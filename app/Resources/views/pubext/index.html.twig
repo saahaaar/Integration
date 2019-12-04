@@ -10,6 +10,7 @@
                 <th>Nompubext</th>
                 <th>Datedebutpubext</th>
                 <th>Dateexppubext</th>
+                <th>photo</th>
                 <th>Actions</th>
                 <th>Symbol</th>
 
@@ -22,7 +23,7 @@
                 <td>{{ pubext.nompubext }}</td>
                 <td>{{ pubext.datedebutpubext|date('Y-m-d') }}</td>
                 <td>{{ pubext.dateexppubext|date('Y-m-d') }}</td>
-
+               <td> <img src="{{ asset('/Integrationpublic/uploads/')~pubext.photo}}" width="100px"></td>
                 <td>
                     <ul>
 

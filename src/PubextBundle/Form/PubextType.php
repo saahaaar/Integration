@@ -17,7 +17,7 @@ class PubextType extends AbstractType
         $builder->add('nompubext')
             ->add('datedebutpubext')
             ->add('dateexppubext')
-            ->add('photo',FileType::class,array('data_class' => null));
+            ->add('photo',FileType::class, array('label'=>'choisir une image'));
     }/**
      * {@inheritdoc}
      */

@@ -14,7 +14,7 @@ class PubintType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nom')->add('datedebutpubint')->add('dateexppubint')->add('photo',FileType::class,array('data_class' => null));
+        $builder->add('nom')->add('datedebutpubint')->add('dateexppubint')->add('photo',FileType::class, array('label'=>'choisir une image'));
     }/**
      * {@inheritdoc}
      */
