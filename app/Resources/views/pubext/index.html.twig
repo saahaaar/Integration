@@ -3,14 +3,16 @@
 {% block body %}
     <h1>Pubexts list</h1>
 
-    <table>
-        <thead>
+    <table class="table table-dark">
+        <thead class="thead-dark">
             <tr>
                 <th>Id</th>
                 <th>Nompubext</th>
                 <th>Datedebutpubext</th>
                 <th>Dateexppubext</th>
                 <th>Actions</th>
+                <th>Symbol</th>
+
             </tr>
         </thead>
         <tbody>
@@ -18,10 +20,12 @@
             <tr>
                 <td><a href="{{ path('pubext_show', { 'id': pubext.id }) }}">{{ pubext.id }}</a></td>
                 <td>{{ pubext.nompubext }}</td>
-                <td>{{ pubext.datedebutpubext }}</td>
-                <td>{{ pubext.dateexppubext }}</td>
+                <td>{{ pubext.datedebutpubext|date('Y-m-d') }}</td>
+                <td>{{ pubext.dateexppubext|date('Y-m-d') }}</td>
+
                 <td>
                     <ul>
+
                         <li>
                             <a href="{{ path('pubext_show', { 'id': pubext.id }) }}">show</a>
 
@@ -29,6 +33,21 @@
                         <li>
                             <a href="{{ path('pubext_edit', { 'id': pubext.id }) }}">edit</a>
                         </li>
+                        <li>
+
+                            <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore"><i class="fab fa-facebook-f"></i>
+
+                                </a></div>
+                        </li>
+                        <li>
+                            <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore"><i class="fab fa-facebook-f"></i>
+
+                                </a></div>
+                        </li>
+                        <li>
+                            <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-size="small"><a href="https://twitter.com/intent/tweet?screen_name=TwitterDev&ref_src=twsrc%5Etfw" class="twitter-mention-button" data-show-count="false">Tweet to @TwitterDev</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+                        </li>
+
                     </ul>
                 </td>
             </tr>

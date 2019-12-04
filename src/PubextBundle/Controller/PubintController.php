@@ -39,7 +39,11 @@ class PubintController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($pubint);
+            $images =$em->getRepository('PubextBundle:Pubint')->findAll();
+            foreach ($images as $key=>$value){
+                $value->setPhoto(base64_encode(stream_get_contents($value->getPhoto())));
+            }
+            $em->persist($value);
             $em->flush();
 
             return $this->redirectToRoute('pubint_show', array('id' => $pubint->getId()));

@@ -39,6 +39,7 @@ class PubextController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $pubext->setPhoto(file_get_contents($pubext->getPhoto()->getPathname()));
             $em->persist($pubext);
             $em->flush();
 

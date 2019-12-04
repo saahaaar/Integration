@@ -2,35 +2,63 @@
 
 namespace PubextBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * Pubext
+ *
+ * @ORM\Table(name="pubext")
+ * @ORM\Entity
  */
 class Pubext
 {
     /**
-     * @var int
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="nompubext", type="string", length=255, nullable=false)
      */
     private $nompubext;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="datedebutpubext", type="date", nullable=false)
      */
     private $datedebutpubext;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="dateexppubext", type="date", nullable=false)
      */
     private $dateexppubext;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="photo", type="blob", length=65535, nullable=false)
+     */
+    private $photo;
+    private $rawPhoto;
+    public function displayPhoto()
+    {
+        if(null === $this->rawPhoto) {
+            $this->rawPhoto = "data:image/png;base65," . base64_encode(stream_get_contents($this->getPhoto()));
+        }
+
+        return $this->rawPhoto;
+    }
 
     /**
-     * Get id
-     *
      * @return int
      */
     public function getId()
@@ -39,22 +67,14 @@ class Pubext
     }
 
     /**
-     * Set nompubext
-     *
-     * @param string $nompubext
-     *
-     * @return Pubext
+     * @param int $id
      */
-    public function setNompubext($nompubext)
+    public function setId($id)
     {
-        $this->nompubext = $nompubext;
-
-        return $this;
+        $this->id = $id;
     }
 
     /**
-     * Get nompubext
-     *
      * @return string
      */
     public function getNompubext()
@@ -63,22 +83,14 @@ class Pubext
     }
 
     /**
-     * Set datedebutpubext
-     *
-     * @param \DateTime $datedebutpubext
-     *
-     * @return Pubext
+     * @param string $nompubext
      */
-    public function setDatedebutpubext($datedebutpubext)
+    public function setNompubext($nompubext)
     {
-        $this->datedebutpubext = $datedebutpubext;
-
-        return $this;
+        $this->nompubext = $nompubext;
     }
 
     /**
-     * Get datedebutpubext
-     *
      * @return \DateTime
      */
     public function getDatedebutpubext()
@@ -87,27 +99,46 @@ class Pubext
     }
 
     /**
-     * Set dateexppubext
-     *
-     * @param \DateTime $dateexppubext
-     *
-     * @return Pubext
+     * @param \DateTime $datedebutpubext
      */
-    public function setDateexppubext($dateexppubext)
+    public function setDatedebutpubext($datedebutpubext)
     {
-        $this->dateexppubext = $dateexppubext;
-
-        return $this;
+        $this->datedebutpubext = $datedebutpubext;
     }
 
     /**
-     * Get dateexppubext
-     *
      * @return \DateTime
      */
     public function getDateexppubext()
     {
         return $this->dateexppubext;
     }
+
+    /**
+     * @param \DateTime $dateexppubext
+     */
+    public function setDateexppubext($dateexppubext)
+    {
+        $this->dateexppubext = $dateexppubext;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPhoto()
+    {
+        return $this->photo;
+    }
+
+    /**
+     * @param string $photo
+     */
+    public function setPhoto($photo)
+    {
+        $this->photo = $photo;
+    }
+
+
+
 }
 

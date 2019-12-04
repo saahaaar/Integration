@@ -2,35 +2,40 @@
 
 namespace PubextBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * Pubint
+ *
+ * @ORM\Table(name="pubint")
+ * @ORM\Entity
  */
 class Pubint
 {
     /**
-     * @var int
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=255, nullable=false)
      */
     private $nom;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="datedebutpubint", type="date", nullable=false)
      */
     private $datedebutpubint;
 
     /**
-     * @var \DateTime
-     */
-    private $dateexppubint;
-
-
-    /**
-     * Get id
-     *
      * @return int
      */
     public function getId()
@@ -39,22 +44,14 @@ class Pubint
     }
 
     /**
-     * Set nom
-     *
-     * @param string $nom
-     *
-     * @return Pubint
+     * @param int $id
      */
-    public function setNom($nom)
+    public function setId($id)
     {
-        $this->nom = $nom;
-
-        return $this;
+        $this->id = $id;
     }
 
     /**
-     * Get nom
-     *
      * @return string
      */
     public function getNom()
@@ -63,22 +60,14 @@ class Pubint
     }
 
     /**
-     * Set datedebutpubint
-     *
-     * @param \DateTime $datedebutpubint
-     *
-     * @return Pubint
+     * @param string $nom
      */
-    public function setDatedebutpubint($datedebutpubint)
+    public function setNom($nom)
     {
-        $this->datedebutpubint = $datedebutpubint;
-
-        return $this;
+        $this->nom = $nom;
     }
 
     /**
-     * Get datedebutpubint
-     *
      * @return \DateTime
      */
     public function getDatedebutpubint()
@@ -87,27 +76,68 @@ class Pubint
     }
 
     /**
-     * Set dateexppubint
-     *
-     * @param \DateTime $dateexppubint
-     *
-     * @return Pubint
+     * @param \DateTime $datedebutpubint
      */
-    public function setDateexppubint($dateexppubint)
+    public function setDatedebutpubint($datedebutpubint)
     {
-        $this->dateexppubint = $dateexppubint;
-
-        return $this;
+        $this->datedebutpubint = $datedebutpubint;
     }
 
     /**
-     * Get dateexppubint
-     *
      * @return \DateTime
      */
     public function getDateexppubint()
     {
         return $this->dateexppubint;
     }
+
+    /**
+     * @param \DateTime $dateexppubint
+     */
+    public function setDateexppubint($dateexppubint)
+    {
+        $this->dateexppubint = $dateexppubint;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPhoto()
+    {
+        return $this->photo;
+    }
+
+    /**
+     * @param string $photo
+     */
+    public function setPhoto($photo)
+    {
+        $this->photo = $photo;
+    }
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dateexppubint", type="date", nullable=false)
+     */
+    private $dateexppubint;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="photo", type="blob", length=65535, nullable=false)
+     */
+    private $photo;
+    private $rawPhoto;
+    public function displayPhoto()
+    {
+        if(null === $this->rawPhoto) {
+            $this->rawPhoto = "data:image/png;base65," . base64_encode(stream_get_contents($this->getPhoto()));
+        }
+
+        return $this->rawPhoto;
+    }
+
+
 }
 

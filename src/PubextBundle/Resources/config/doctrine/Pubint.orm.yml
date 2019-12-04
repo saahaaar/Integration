@@ -1,19 +1,32 @@
 PubextBundle\Entity\Pubint:
     type: entity
-    table: null
-    repositoryClass: PubextBundle\Repository\PubintRepository
+    table: pubint
     id:
         id:
             type: integer
+            nullable: false
+            options:
+                unsigned: false
             id: true
             generator:
-                strategy: AUTO
+                strategy: IDENTITY
     fields:
         nom:
             type: string
+            nullable: false
             length: 255
+            options:
+                fixed: false
         datedebutpubint:
             type: date
+            nullable: false
         dateexppubint:
             type: date
+            nullable: false
+        photo:
+            type: blob
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
     lifecycleCallbacks: {  }
