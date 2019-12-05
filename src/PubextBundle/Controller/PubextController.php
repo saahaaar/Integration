@@ -43,15 +43,16 @@ class PubextController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
 
 
-            $file=$request->files->get('pubextbundle_pubext')['pubext'];
+            $file=$request->files->get('pubextbundle_pubext')['photo'];
             $uploads_directory=$this->getParameter('uploads_directory');
-
             $fileName = $file->getClientOriginalName();
             $file->move($uploads_directory,$fileName);
             $pubext->setPhoto($fileName);
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($pubext);
             $em->flush();
+
             return $this->redirectToRoute('pubext_show', array('id' => $pubext->getId()));
         }
 

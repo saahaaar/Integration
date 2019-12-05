@@ -27,6 +27,7 @@ class AppKernel extends Kernel
             new PubextBundle\PubextBundle(),
             new admintmpBundle\admintmpBundle(),
             new promotionBundle\promotionBundle(),
+            new Gregwar\CaptchaBundle\GregwarCaptchaBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

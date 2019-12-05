@@ -38,14 +38,14 @@ class PubintController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $file=$request->files->get('pubextbundle_pubint')['pubint'];
-            $uploads_directory=$this->getParameter('uploads_directory');
 
+            $file=$request->files->get('pubextbundle_pubint')['photo'];
+            $uploads_directory=$this->getParameter('uploads_directory');
             $fileName = $file->getClientOriginalName();
             $file->move($uploads_directory,$fileName);
-            $pubint->setPhotoproduit($fileName);
-            $em = $this->getDoctrine()->getManager();
+            $pubint->setPhoto($fileName);
 
+            $em = $this->getDoctrine()->getManager();
             $em->persist($pubint);
             $em->flush();
 
