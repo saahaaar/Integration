@@ -1,0 +1,86 @@
+{% extends "base.html.twig" %}
+
+
+  {% block content %}
+
+
+      <div class="single-product-area mb-115">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-12 col-lg-5">
+                      <div class="product-details-img-tab">
+                          <!--Product Tab Content Start-->
+                          <div class="tab-content single-product-img">
+                              <div class="tab-pane fade show active" id="product1">
+                                  <div class="product-large-thumb img-full">
+                                      <div class="easyzoom easyzoom--overlay">
+                                          <a href="img/single-product/large/single-product1.jpg">
+                                              <img src="{{ asset('img/single-product/large/single-product1.jpg')}}" alt="">
+                                          </a>
+                                          <a href="img/single-product/large/single-product1.jpg" class="popup-img venobox" data-gall="myGallery"><i class="fa fa-search"></i></a>
+                                      </div>
+                                  </div>
+                              </div>
+
+
+                          </div>
+                          <!--Product Tab Content End-->
+                          <!--Product Tab Menu Start-->
+
+                          <!--Product Tab Menu End-->
+                      </div>
+                  </div>
+                  <div class="col-md-12 col-lg-7">
+                      <!--Product Details Content Start-->
+                      <div class="product-details-content">
+                          <!--Product Nav Start-->
+                          <div class="product-nav">
+                              <a href="#"><i class="fa fa-angle-left"></i></a>
+                              <a href="#"><i class="fa fa-angle-right"></i></a>
+                          </div>
+                          <!--Product Nav End-->
+                          <h2>{{ rec.produit.nom }}</h2>
+                          <div class="single-product-reviews">
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star-o"></i>
+
+                          </div>
+                          <div class="single-product-price">
+                              <a class="review-link" href="#">{{ rec.dateReclamation |  date('j. F Y') }}</a>
+                          </div>
+                          <div class="product-description">
+                              <p>{{ rec.description }}</p>
+                          </div>
+                          <p class="stock ">{% if rec.etat == 1 %}
+                                  reclamation Traité
+                              {% elseif rec.etat == 0 %}
+                                  reclamation pas Encore traité
+
+                              {% endif %}</p>
+                          <div class="single-product-quantity">
+
+                          </div>
+                          <div class="wishlist-compare-btn">
+                              <a href="{{ path('modifier_rec', {'id':rec.id}) }}" class="add-compare">modifier</a>
+                              <a href="{{ path('supprimer_rec', {'id':rec.id}) }}" class="btn-danger">supprimer</a>
+                          </div>
+                          <div class="product-meta">
+
+                          </div>
+                          <div class="single-product-sharing">
+                              <h3>Share this reclamation</h3>
+                              <ul>
+                                  <li>{{ facebookButton( { 'facebook': {'locale':'fr_FR', 'send':true}} ) }}</li>
+
+                              </ul>
+                          </div>
+                      </div>
+                      <!--Product Details Content End-->
+                  </div>
+              </div>
+          </div>
+      </div>
+{% endblock %}

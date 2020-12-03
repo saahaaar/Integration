@@ -1,0 +1,116 @@
+{% extends 'index.html.twig' %}
+
+
+
+{% block content %}
+
+
+
+<div class="card">
+    <div class="card-block">
+
+    <div class="card-title-block">
+        <h3 class="title"> liste des categories </h3>
+    </div>
+    <div class="container">
+
+        <table title="categories" align="center" class="table tab-pane" >
+
+            <form  action="{{ path('recherchecc') }}" method="post">
+                <div align="center">
+                    <input name="nom" type="text" class="form-control boxed" placeholder="Recherche">
+
+                    <input type="submit"  value="chercher" class="btn btn-oval btn-primary-outline" name="keyword">
+                </div>
+
+
+
+            </form>
+            <thead>
+            <tr>
+
+                <th>Nom Categorie</th>
+                <th>Nom Sous Categorie </th>
+                <th>Actions </th>
+                <th>social </th>
+            </tr>
+            </thead>
+
+            <tbody>
+            {% for key,cat in categories %}
+                {% if cat is empty %}
+                    <tr>
+                        <td>{{ categopar[key] }}</td>
+                        <td> Aucune Sous categorie </td>
+                        <td><ul>
+                                <li>
+                                    <a href="{{ path('categorie_update', { 'id':  key }) }}"> Modifier </a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('categorie_delete', { 'id':  key  }) }}"> Supprimer</a>
+                                </li>
+                            </ul></td>
+     <!--                   <td>
+                            <ul>
+                                  {{  linkedinButton() }}   {{  pinterestButton() }}
+                            </ul>
+                            <ul>
+                                {{  twitterButton() }} {{  facebookButton() }}
+                            </ul>
+                        </td>     -->
+                        </td>
+                    </tr>
+
+
+                {% else %}
+                    {% for c in cat %}
+                        <tr>
+
+
+                    <td>{{ c.nom}}</td>
+                    <td>
+                        <ul>
+                            <li>
+                                <a href="{{ path('categorie_update', { 'idcate': c.id }) }}"> Modifier </a>
+                            </li>
+                            <li>
+                                <a href="{{ path('categorie_delete', { 'id': c.id }) }}"> Supprimer</a>
+                            </li>
+                            <td>
+         <!--                       <ul>
+                                     {{  linkedinButton() }}   {{  pinterestButton() }}
+                                </ul>
+                                <ul>
+                                    {{  twitterButton() }}   {{  facebookButton() }}
+                                </ul>
+                            </td>
+
+                        </ul>       -->
+
+
+                    </td>
+
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+
+            {% endfor %}
+            </tbody>
+        </table>
+        <div align="center">
+            <ul>
+                <a href="{{ path('categorie_new')  }}">  Ajouter une nouvelle categorie </a>
+
+
+
+
+            </ul>
+        </div>
+
+    </div>
+
+
+    </div>
+
+</div>
+{% endblock %}

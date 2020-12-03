@@ -1,0 +1,18 @@
+club_homepage:
+  path:     /affiche
+  defaults: { _controller: ClubBundle:Club:list}
+club_page:
+  path:     /infob
+  defaults: { _controller: ClubBundle:Club:infoB}
+club_twig:
+  path:     /twig
+  defaults: { _controller: ClubBundle:Club:twig}
+club_test:
+  path:     /test
+  defaults: { _controller: ClubBundle:Club:test}
+club_read:
+  path:     /read/{name}
+  defaults: { _controller: ClubBundle:Club:read}
+club_home:
+  path:     /home
+  defaults: { _controller: ClubBundle:Club:home}

@@ -1,0 +1,46 @@
+{% extends "base.html.twig" %}
+
+
+  {% block content %}
+
+
+    <div class="login-register-area mb-80">
+      <div class="container">
+        <div class="row">
+          <!--Login Form Start-->
+          <div class="col-md-6 col-sm-6">
+            <div class="customer-login-register">
+              <div class="form-login-title">
+                <h2>Veuillez modifier votre Reclamation</h2>
+              </div>
+              <div class="login-form">
+                <form id="form" action="#" method="post">
+                  <div class="form-fild">
+                    <p><label>Description :<span class="required">*</span></label></p>
+                    <input name="description" value="{{ rec.description }}" type="text">
+                  </div>
+                  <div class="form-fild">
+                    <p><label>Image <span class="required">*</span></label></p>
+                    <input form="form" name="image" value="{{ rec.image }}" type="file">
+                  </div>
+                  <div class="login-submit">
+                    <button type="submit" class="form-button">Modifier</button>
+                    <label>
+                      <input class="checkbox" name="rememberme" value="" type="checkbox">
+                      <span>here to update your reclamation </span>
+                    </label>
+                  </div>
+
+                </form>
+              </div>
+            </div>
+          </div>
+          <!--Login Form End-->
+          <!--Register Form Start-->
+
+          <!--Register Form End-->
+        </div>
+      </div>
+    </div>
+
+{% endblock %}

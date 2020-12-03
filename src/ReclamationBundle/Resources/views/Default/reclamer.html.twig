@@ -1,0 +1,46 @@
+{% extends "base.html.twig" %}
+
+
+{% block content %}
+
+
+      <div class="login-register-area mb-80">
+          <div class="container">
+              <div class="row">
+                  <!--Login Form Start-->
+                  <div class="col-md-6 col-sm-6">
+                      <div class="customer-login-register">
+                          <div class="form-login-title">
+                              <h2>Add Reclamation</h2>
+                          </div>
+                          <div class="login-form">
+                              <form action="#" method="post">
+                                  <div class="form-fild">
+                                      <p><label>Description :<span class="required">*</span></label></p>
+                                      <input name="description" value="" placeholder="name" type="text" required minlength="5fr">
+                                  </div>
+                                  <div class="form-fild">
+                                      <p><label>Image <span class="required">*</span></label></p>
+                                      <input name="image" value="" type="file" required>
+                                  </div>
+                                  <div class="login-submit">
+                                      <button type="submit" class="form-button">Reclamer</button>
+                                      <label>
+                                          <input class="checkbox" name="rememberme" value="" type="checkbox">
+
+                                      </label>
+                                  </div>
+
+                              </form>
+                          </div>
+                      </div>
+                  </div>
+                  <!--Login Form End-->
+                  <!--Register Form Start-->
+
+                  <!--Register Form End-->
+              </div>
+          </div>
+      </div>
+
+  {% endblock %}
